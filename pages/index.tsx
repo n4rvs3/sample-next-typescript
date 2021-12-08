@@ -1,16 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
 import {
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuIcon,
-  MenuCommand,
-  MenuDivider,
   Heading,
   Button
 } from '@chakra-ui/react'
@@ -25,20 +15,9 @@ const Home = () => {
         <meta name="description" content="Typescriptを用いたNext.jsのサンプル" />
       </Head>
       <Heading as='h1' size='xl'>Hello World</Heading>
-      <Menu>
-        {({ isOpen }) => (
-          <>
-            <MenuButton isActive={isOpen} as={Button} rightIcon={<ChevronDownIcon />}>
-              {isOpen ? 'Close' : 'Open'}
-            </MenuButton>
-            <MenuList>
-              <Link href="/">Home</Link>
-              <Link href="/about">About</Link>
-              <MenuItem onClick={() => alert('Kagebunshin')}>Create a Copy</MenuItem>
-            </MenuList>
-          </>
-        )}
-      </Menu>
+      <Link href="/about">
+        <Button>About</Button>
+      </Link>
     </div>
   )
 }
